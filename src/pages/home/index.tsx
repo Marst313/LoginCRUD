@@ -120,7 +120,7 @@ function Home() {
               <option value="Declined">Declined</option>
             </select>
           </div>
-          <div className="text-sm text-gray-600 font-bold">Total Tasks: {tasks.length}</div>
+          <div className="text-sm text-gray-800 dark:text-gray-200 font-bold">Total Tasks: {tasks.length}</div>
           <button
             onClick={() => {
               setShowModal(true);

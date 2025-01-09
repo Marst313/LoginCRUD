@@ -9,6 +9,12 @@ function Aside() {
 
   const asideref = useRef<null | HTMLDivElement>(null);
 
+  /**
+   * Handles click events outside the sidebar or hamburger button to close the sidebar.
+   * This function is triggered when a 'mousedown' event occurs.
+   *
+   * @param {MouseEvent} event - The mouse event triggered when clicking outside the sidebar.
+   */
   function handleClickOutside(event: MouseEvent): void {
     const target = event.target as Node;
 
@@ -17,12 +23,23 @@ function Aside() {
     }
   }
 
+  /**
+   * Handles the 'Escape' key press event to close the sidebar.
+   * This function is triggered when a 'keydown' event occurs with the 'Escape' key.
+   *
+   * @param {KeyboardEvent} event - The keyboard event triggered when the 'Escape' key is pressed.
+   */
   function handleKeyDown(event: KeyboardEvent): void {
     if (event.key === 'Escape') {
       handleCloseSidebar();
     }
   }
 
+  /**
+   * Adds event listeners for 'mousedown' and 'keydown' to handle closing the sidebar
+   * when clicking outside or pressing the 'Escape' key. Removes event listeners
+   * on component unmount or cleanup.
+   */
   useEffect(function () {
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleKeyDown);
@@ -32,11 +49,12 @@ function Aside() {
       document.removeEventListener('keydown', handleKeyDown);
     };
   });
-
   return (
     <aside
       ref={asideref}
-      className={`${openSidebar ? 'translate-x-0' : '-translate-x-full'} fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700`}
+      className={`${
+        openSidebar ? 'translate-x-0' : '-translate-x-full'
+      } fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 pb-16 md:pb-0 `}
     >
       <div className="container-aside">
         {/* TOP SECTION */}
