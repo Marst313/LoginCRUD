@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white font-sans antialiased;
+}
+
+.section-title {
+  @apply font-bold text-lg dark:text-gray-100;
+}
+
+.input-group {
+  @apply mb-4;
+
+  & > label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+  }
+
+  & > input {
+    @apply block w-full px-4 py-2 text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none;
+  }
+}
+
+/* LOGIN FORM */
+section {
+  @apply h-screen flex flex-col md:flex-row justify-center items-center space-y-10 md:space-y-0 md:space-x-16 px-5;
+}
+
+.logo {
+  @apply max-w-sm rounded-lg ml-2 md:ml-0  dark:shadow-gray-900;
+}
+
+/* Form Styles */
+.form-login {
+  @apply w-full max-w-md bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg dark:shadow-gray-900 transition;
+
+  & > h1 {
+    @apply text-2xl font-bold mb-6 text-center dark:text-white;
+  }
+
+  & > .input-group {
+    @apply mb-4;
+
+    & > label {
+      @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+    }
+
+    & > input {
+      @apply block w-full px-4 py-2 text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none;
+    }
+  }
+}
+
+.remember-me {
+  @apply flex items-center justify-between mb-4;
+
+  & > div {
+    @apply flex items-center;
+  }
+  & input {
+    @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 dark:bg-gray-700 dark:border-gray-600;
+  }
+
+  & label {
+    @apply ml-2 text-sm font-medium text-gray-700 dark:text-gray-300;
+  }
+}
+
+.submit-button {
+  @apply w-full py-2 text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition;
+}
+/* LOGIN FORM */
+
+/* NAVBAR */
+nav {
+  @apply fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700;
+
+  & > div:first-child {
+    @apply px-3 py-3 lg:px-5 lg:pl-3;
+  }
+
+  & .container__nav-left {
+    @apply flex items-center justify-start rtl:justify-end;
+
+    & .hamburger-button {
+      @apply inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600;
+    }
+  }
+
+  & .container__nav-right {
+    @apply flex items-center;
+
+    & > div:first-child {
+      @apply flex items-center ms-3;
+
+      & .user-name {
+        @apply hidden md:block mr-1 dark:text-gray-200;
+      }
+    }
+
+    & .profile {
+      @apply flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 md:mr-5;
+
+      & > img {
+        @apply w-8 h-8 rounded-full;
+      }
+    }
+
+    & .dropdown__modal {
+      @apply z-50  my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600 absolute  right-10 top-10;
+
+      & .profile__dropdown {
+        @apply px-4 py-3;
+
+        & > p:first-child {
+          @apply text-sm text-gray-900 dark:text-white;
+        }
+
+        & > p:last-child {
+          @apply text-sm font-medium text-gray-900 truncate dark:text-gray-300;
+        }
+      }
+
+      & > ul {
+        @apply py-1;
+
+        & a {
+          @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white;
+        }
+
+        & button {
+          @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white w-full text-start;
+        }
+      }
+    }
+  }
+}
+/* NAVBAR */
+
+/* ASIDE */
+aside {
+  & .container-aside {
+    @apply h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 flex flex-col justify-between;
+
+    & ul {
+      @apply space-y-2 font-medium;
+
+      & li button {
+        @apply flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700  w-full text-start;
+      }
+    }
+  }
+
+  & .icon-sidebar {
+    @apply flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white;
+  }
+}
+
+/* ASIDE */
+
+/* TOAST */
+.toast-success {
+  @apply bg-green-500;
+}
+
+.toast-error {
+  @apply bg-red-500;
+}
+/* TOAST */
+
+/* SETTINGS */
+.container__settings {
+  @apply p-4 sm:ml-64;
+
+  & > div {
+    @apply p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700 mt-14 dark:bg-gray-800 bg-white;
+  }
+
+  & > div > div {
+    @apply mt-6;
+
+    & > h2 {
+      @apply font-semibold text-lg dark:text-gray-300;
+    }
+  }
+
+  & form {
+    @apply space-y-4 mt-4;
+
+    & button {
+      @apply px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-blue-700 dark:hover:bg-blue-800;
+    }
+  }
+}
+
+.container__home {
+  @apply p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700 mt-14 dark:bg-gray-800 bg-white;
+
+  & > div {
+    @apply mb-4 flex flex-col gap-3 md:flex-row md:gap-0 justify-between md:items-center;
+  }
+
+  & > table {
+    @apply table-auto w-full border-collapse border border-gray-300;
+
+    & > thead th {
+      @apply border border-gray-300 p-2;
+    }
+
+    & > tbody td {
+      @apply border border-gray-300 p-2;
+
+      & .edit-button {
+        @apply px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded mr-2;
+      }
+
+      & .delete-button {
+        @apply px-2 py-1 bg-red-500 hover:bg-red-600 text-white rounded;
+      }
+    }
+  }
+}
+
+.container__modal-task {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center;
+
+  & > div {
+    @apply bg-white p-6 rounded shadow-lg dark:bg-gray-800 dark:text-white;
+
+    & > div {
+      @apply flex justify-end;
+
+      & .cancel-button {
+        @apply px-4 py-2 bg-gray-300 hover:bg-gray-400 dark:hover:bg-gray-700 rounded mr-2 dark:bg-gray-600 dark:text-white;
+      }
+
+      & .add-button {
+        @apply px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded dark:bg-green-700 dark:hover:bg-green-800;
+      }
+    }
+  }
+  & .title {
+    @apply text-lg font-bold mb-4;
+  }
+  & input {
+    @apply p-2 border rounded w-full mb-4 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+  }
+  & select {
+    @apply p-2 border rounded w-full mb-4 dark:bg-gray-700 dark:border-gray-600 dark:text-white;
+  }
+}
