@@ -201,7 +201,7 @@ aside {
     @apply mb-4 flex flex-col gap-3 md:flex-row md:gap-0 justify-between md:items-center;
   }
 
-  & > table {
+  & table {
     @apply table-auto w-full border-collapse border border-gray-300;
 
     & > thead th {
@@ -212,11 +212,11 @@ aside {
       @apply border border-gray-300 p-2;
 
       & .edit-button {
-        @apply px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded mr-2;
+        @apply px-2 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded mr-2 mb-2;
       }
 
       & .delete-button {
-        @apply px-2 py-1 bg-red-500 hover:bg-red-600 text-white rounded;
+        @apply px-2 py-1 bg-red-500 hover:bg-red-600 text-white rounded mb-2;
       }
     }
   }

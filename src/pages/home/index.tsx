@@ -132,37 +132,39 @@ function Home() {
           </button>
         </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>NO</th>
-              <th>ID</th>
-              <th>Task Name</th>
-              <th>Task Type</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paginatedTasks.map((task, index) => (
-              <tr key={task.id}>
-                <td>{(currentPage - 1) * pageSize + index + 1}</td>
-                <td>{task.id}</td>
-                <td>{task.name}</td>
-                <td>
-                  <span className={`px-4 py-2 rounded-full ${task.type === 'Done' ? 'bg-green-500 text-white' : task.type === 'Process' ? 'bg-yellow-500 text-white' : 'bg-red-500 text-white'}`}>{task.type}</span>
-                </td>
-                <td>
-                  <button onClick={() => handleEditTask(task)} className="edit-button">
-                    Edit
-                  </button>
-                  <button onClick={() => deleteTask(task.id)} className="delete-button">
-                    Delete
-                  </button>
-                </td>
+        <div className="overflow-x-auto">
+          <table>
+            <thead>
+              <tr>
+                <th>NO</th>
+                <th>ID</th>
+                <th>Task Name</th>
+                <th>Task Type</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {paginatedTasks.map((task, index) => (
+                <tr key={task.id}>
+                  <td>{(currentPage - 1) * pageSize + index + 1}</td>
+                  <td>{task.id}</td>
+                  <td>{task.name}</td>
+                  <td>
+                    <span className={`px-4 py-2 rounded-full ${task.type === 'Done' ? 'bg-green-500 text-white' : task.type === 'Process' ? 'bg-yellow-500 text-white' : 'bg-red-500 text-white'}`}>{task.type}</span>
+                  </td>
+                  <td>
+                    <button onClick={() => handleEditTask(task)} className="edit-button">
+                      Edit
+                    </button>
+                    <button onClick={() => deleteTask(task.id)} className="delete-button">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div className="flex justify-between items-center mt-4">
